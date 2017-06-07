@@ -1,0 +1,28 @@
+Feature style guide:
+- xxx-yyy.module.ts file
+- xxx-yyy-routing.module.ts file
+
+Child routing:
+  Each feature area resides in its own folder.
+  Each feature has its own Angular feature module.
+  Each area has its own area "shell" component.
+  Each area shell component has its own router outlet and child routes.
+  Feature area routes rarely (if ever) cross with routes of other features.
+
+Routing params:
+- prefer a required route parameter when the value is mandatory
+- prefer an optional parameter when the value is optional, complex, and/or multivariate.
+
+Relative Navigation:
+The router supports directory-like syntax in a link parameters list to help guide route name lookup:
+- './' is relative to the current level
+- '../' to go up one level in the route path
+
+Example:
+this.router.navigate(['../../'], {relativeTo: this.activatedRoute});
+
+
+Async routing (modules lazy loading):
+  You can load feature areas only when requested by the user.
+  You can speed up load time for users that only visit certain areas of the application.
+  You can continue expanding lazy loaded feature areas without increasing the size of the initial load bundle.

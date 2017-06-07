@@ -1,0 +1,9 @@
+<h3>RE Main</h3>
+<h4>Real Estates count: {{count}}</h4>
+<div>
+  Real Estate with ID:
+  <select [(ngModel)]="selectedId">
+    <option *ngFor="let id of ids" [value]="id">{{id}}</option>
+  </select>
+  <button (click)="gotoRealEstate()" [disabled]="!isIdSelected()">Go to Real Estate</button>
+</div>

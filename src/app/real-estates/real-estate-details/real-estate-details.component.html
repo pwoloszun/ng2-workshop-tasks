@@ -1,0 +1,13 @@
+<wt-spinner></wt-spinner>
+
+
+<div *ngIf="realEstate">
+  <h3>RE det</h3>
+  <p>Street: {{realEstate.street}}</p>
+  <p>LAT, LNG: {{realEstate.lat}}, {{realEstate.lng}}</p>
+  <button class="btn btn-primary" (click)="onBack()">Back to Main</button>
+</div>
+
+<div *ngIf="notFound">
+  Cant find RE
+</div>

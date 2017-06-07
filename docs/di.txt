@@ -1,0 +1,9 @@
+DI:
+- all providers from ALL eagerly loaded modules are globally registered(in AppModules injector) and available everywhere
+- all providers from EACH lazy loaded module are registered and available only in that module(and its "children")
+
+Good practices:
+- CoreModule should be a "pure services" module - it should have only providers
+- all "global" services should be moved to that CoreModule and imported only once in AppModule
+- feature specific services should be registered in that feature top most component of that feature (usually entry/shell component)
+- if you need new instance of service injected each time: define it at component level
